@@ -1,24 +1,25 @@
+import React from "react";
 import { Modal } from "@mantine/core";
 import { ShowStepper } from "./cardStepper";
+import { AddressSteps } from "../steps/Address";
 
-export interface AddCardProp {
+interface AddCardProp {
   close: () => void;
   opened: boolean;
 }
-
-export const AddCard = ({ close, opened }: AddCardProp) => {
+export default function AddAddress({ close, opened }: AddCardProp) {
   return (
-    <>
+    <div>
       <Modal
         opened={opened}
         onClose={close}
         withCloseButton={true}
-        title="Create Card"
+        title="Add Address"
         centered
         size="md"
       >
-        <ShowStepper />
+        <AddressSteps />
       </Modal>
-    </>
+    </div>
   );
-};
+}

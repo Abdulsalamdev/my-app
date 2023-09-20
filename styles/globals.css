@@ -41,6 +41,18 @@
   font-weight: 500;
   font-size: 20px;
 }
+
+.mantine-189n011 {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
+    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  background: rgba(203, 56, 56, 0.03);
+  border: 0.125rem dashed #dd5a56;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
 @keyframes fade {
   from {
     transform: translateY(50px);
@@ -58,4 +70,43 @@
     opacity: 1;
     transform: translateY(10);
   }
+}
+
+.modal-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.card-shadow {
+  box-shadow: 0px 2px 5px 0px rgba(38, 51, 77, 0.03);
+  border: 3.128px solid var(--gray-blue-grey-blue-97, #f5f6f7);
+}
+
+.listcard {
+  background-image: url("/images/gridCard.jpeg");
+  border-radius: 8px;
+  width: 292px;
+  height: 166px;
+}
+
+.scan {
+  border-right: 1px solid white;
+}
+
+.onTop {
+  z-index: 1;
+}
+.delete {
+  border-radius: 8px;
+  border: 0.6px solid var(--brand-primary-50, #8b908b);
+  background: var(--work-inner, #f7f8f9);
+  color: #54565b;
+}
+.listCard {
+  width: 177px;
+  height: 307px;
+  border-radius: 8.272px;
+  background-image: url("/images/listCard.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
