@@ -15,13 +15,13 @@ export function Log() {
     mutationKey: builder.account.api.sign_in.get(),
     onSuccess(data, variables, context) {
       toast.success("login successfully");
-      toast.error("wrong input");
       push("/list");
       sessionStorage.setItem("my-user", JSON.stringify(data.data));
       myForm.reset();
     },
     onError(err) {
       console.log(err);
+      toast.error("wrong input");
     },
   });
 
