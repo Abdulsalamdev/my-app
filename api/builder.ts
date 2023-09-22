@@ -7,6 +7,11 @@ export const builder = createBuilder({
         api: {
             sign_in: (data: lOGINAPI) => LOGINAPI.post("/api/account/login/", data),
         }
+    },
+    create: {
+        api: {
+            
+        }
     }
     
 })
