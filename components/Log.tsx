@@ -7,16 +7,19 @@ import { useMutation } from "@tanstack/react-query";
 import { builder } from "@/api/builder";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
+import { cookieStorage, usePortal } from "@ibnlanre/portal";
 
 export function Log() {
   const { push } = useRouter();
+  // const [myUser, setMyUser] = usePortal("");
   const { mutate, isLoading } = useMutation({
     mutationFn: () => builder.use().account.api.sign_in(myForm.values),
     mutationKey: builder.account.api.sign_in.get(),
     onSuccess(data, variables, context) {
       toast.success("login successfully");
       push("/list");
-      sessionStorage.setItem("my-user", JSON.stringify(data.data));
+      cookieStorage.setItem("my-user", JSON.stringify(data.data));
+      // console.log(data?.data);
       myForm.reset();
     },
     onError(err) {
@@ -56,10 +59,10 @@ export function Log() {
       <div className="b-[15px]">
         <PasswordInput {...myForm.getInputProps("password")} />
       </div>
-      <Link href={"#"}>
-        <div className="text-[#C81107] text-[12px] font-bold font-Roboto flex justify-end pt-[20px] pb-[50px]">
+      <Link href={"#"} className="flex justify-end">
+        <button className="text-[#C81107] text-[12px] font-bold font-Roboto pt-[20px] pb-[50px]">
           Forgot Password?
-        </div>
+        </button>
       </Link>
       <button
         type="submit"

@@ -29,7 +29,7 @@ export function DeleteAddress({ close, opened }: AddCardProp) {
               className="text-[12px] font-Roboto py-[13px] px-[44px] delete"
               onClick={close}
             >
-              Delete
+              cancel
             </button>
             <button className="text-[#F2F2F2] text-[12px] font-Roboto py-[13px] px-[44px] bg-[#C81107] rounded-[8px]">
               Delete

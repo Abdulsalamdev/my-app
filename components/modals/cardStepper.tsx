@@ -17,6 +17,11 @@ export function ShowStepper() {
   };
   const [upload, setUplode] = useState<FileWithPath | null>(null);
 
+  // const [formdetails, setFormDetails] = useState({
+  //   first_name: '',
+
+  // })
+
   return (
     <>
       <Stepper
