@@ -35,6 +35,12 @@
   padding: 40px;
   border-radius: 16px;
 }
+.shadow1 {
+  box-shadow: 0px 4px 44px 0px rgba(0, 0, 0, 0.16);
+  background-color: white;
+  padding: 20px;
+  border-radius: 16px;
+}
 
 .mantine-Modal-title {
   color: #54565b;

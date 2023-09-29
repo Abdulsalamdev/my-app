@@ -3,7 +3,7 @@ import React from "react";
 
 export default function SignUp() {
   return (
-    <div className="lbg">
+    <div className="lbg ">
       <Side />
     </div>
   );

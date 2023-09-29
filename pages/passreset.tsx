@@ -1,5 +1,10 @@
+import { Password } from "@/components/password";
 import React from "react";
 
-export function Passreset() {
-  return <div>hi</div>;
+export default function Passreset() {
+  return (
+    <div>
+      <Password />
+    </div>
+  );
 }

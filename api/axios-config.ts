@@ -25,7 +25,7 @@ export const CARD = axios.create({
 //     (req) => {
 //         let token = sessionStorage.getItem("my-user");
 //         if (token) {
-//             JSON.parse(token)
+//             JSON.parse(token) 
 //             req.headers.Authorization = `Bearer ${token}`;
 //         }
 //         return req;

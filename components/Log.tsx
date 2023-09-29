@@ -59,10 +59,10 @@ export function Log() {
       <div className="b-[15px]">
         <PasswordInput {...myForm.getInputProps("password")} />
       </div>
-      <Link href={"#"} className="flex justify-end">
-        <button className="text-[#C81107] text-[12px] font-bold font-Roboto pt-[20px] pb-[50px]">
+      <Link href={"/passreset"} className="flex justify-end">
+        <span className="text-[#C81107] text-[12px] font-bold font-Roboto py-[15px]">
           Forgot Password?
-        </button>
+        </span>
       </Link>
       <button
         type="submit"
@@ -70,6 +70,13 @@ export function Log() {
       >
         {isLoading ? <Loader /> : <span>Sign In</span>}
       </button>
+
+      <div className="pt-[5px]">
+        <Link href={"/signup"} className="text-[15px] font-medium font-Roboto ">
+          don't have account?{" "}
+          <span className="text-[#DC372F]">New account</span>
+        </Link>
+      </div>
     </form>
   );
 }

@@ -1,6 +1,6 @@
 import { createBuilder } from "@ibnlanre/portal";
 import {  CARD, LOGINAPI,  } from "./axios-config";
-import { ADDRESSAPI, CREATEACCOUNT, CREATEADDRESS, CREATECARD, DELETEADDRESS, DELETECARD, OTPCODE, RESETPASSWORD, UPDATEADDRESS, UPDATECARD, lOGINAPI } from "@/components/types/types";
+import { ADDRESSAPI, CREATEACCOUNT, CREATEADDRESS, CREATECARD, DELETEADDRESS, DELETECARD, LOGINREFRESH, OTPCODE, RESETPASSWORD, UPDATEADDRESS, UPDATECARD, lOGINAPI } from "@/components/types/types";
 
 export const builder = createBuilder({
     account:{
@@ -10,7 +10,8 @@ export const builder = createBuilder({
             forgetPassword: () => LOGINAPI.post("/api/account/forget_password/"),
             createAccount: (data: CREATEACCOUNT) => LOGINAPI.post("/api/account/create_account/", data),
             resetPassword: (data: RESETPASSWORD) => LOGINAPI.post("/api/account/reset_password/", data),
-            otpCode: (data: OTPCODE) => LOGINAPI.post("/api/account/verify_verification_code/" , data)
+            otpCode: (data: OTPCODE) => LOGINAPI.post("/api/account/verify_verification_code/", data),
+            loginRefresh: (data: LOGINREFRESH) => LOGINAPI.post("/api/account/login/refresh", data)
         }
     },
     addressData: {

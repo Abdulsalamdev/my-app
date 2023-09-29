@@ -28,7 +28,6 @@ export interface OTPCODE {
 
 export interface CREATEACCOUNT {
   first_name: string;
-  middle_name?: string;
   last_name: string;
   email: string;
   password: string;
@@ -81,4 +80,8 @@ export interface UPDATECARD {
 
 export interface DELETECARD {
   expert_id: string;
+}
+
+export interface LOGINREFRESH {
+  refresh : string
 }

@@ -4,9 +4,9 @@ import { Log } from "./Log";
 import { Create } from "./Create";
 export function Side() {
   return (
-    <div className="w-[90%] m-auto py-[2rem]">
-      <Image src={"/images/afex.png"} width={50} height={50} alt={""}></Image>
-      <div className="flex justify-between items-center pt-[50px] flex-wrap gap-[30px]">
+    <div className="w-[90%] m-auto ">
+      {/* <Image src={"/images/afex.png"} width={50} height={50} alt={""}></Image> */}
+      <div className="flex justify-between items-center pt-[20px] flex-wrap gap-[30px]">
         <div className="hidden md:flex flex-col items-center">
           <Image
             src={"/images/secure.png"}
