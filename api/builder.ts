@@ -24,7 +24,7 @@ export const builder = createBuilder({
     },
     cardData: {
         api: {
-            cards: () => CARD.get(`/api/card/expert_cards/`),
+            cards: () => CARD.get(`/api/card/expert_cards/active/`),
             createCard: (data: CREATECARD) => CARD.post(`/api/card/expert_cards/create/`, data),
             updateCard: (data: UPDATECARD) => CARD.put(`/api/card/expert_cards/{expert_id}/`, data),
             deleteCard: (data: any) => CARD.delete(`/api/card/expert_cards/{expert_id}/`, data)

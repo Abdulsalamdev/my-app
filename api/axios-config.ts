@@ -1,7 +1,6 @@
 import axios from "axios"
-import { promises } from "dns";
 import {cookieStorage} from "@ibnlanre/portal"
-import { toast } from "react-toastify";
+
 // create an instance
 export const LOGINAPI = axios.create({
     baseURL: process.env.NEXT_PUBLIC_BASE_URL

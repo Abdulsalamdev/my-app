@@ -82,23 +82,36 @@ export function Gridbuttom() {
         {list ? (
           <div className="flex flex-wrap">
             <div className="flex flex-col gap-[10px]">
-              <div className="listCard flex flex-col justify-center items-center">
-                {/* <Image src={"/images/afex.png"} alt={""} width={50} height={50} /> */}
-                <div className="flex flex-col gap-[15px]">
-                  <Image
-                    src={"/images/secure.png"}
-                    alt={""}
-                    width={100}
-                    height={100}
-                    className="rounded-full"
-                  />
-                  <p className="text-white text-[22px] w-[88px] text-center">
-                    Ayodeji <span className="font-bold">Balogun</span>
-                  </p>
+              <div
+                className="p-[10px] rounded-[18px]"
+                onClick={() => setRed(true)}
+                style={{
+                  border: red ? "2px solid #E1261C" : "#f5f6f7",
+                }}
+              >
+                <div className="listCard flex flex-col justify-center items-center">
+                  {/* <Image src={"/images/afex.png"} alt={""} width={50} height={50} /> */}
+                  <div className="flex flex-col gap-[15px]">
+                    <Image
+                      src={"/images/secure.png"}
+                      alt={""}
+                      width={100}
+                      height={100}
+                      className="rounded-full"
+                    />
+                    <p className="text-white text-[22px] w-[88px] text-center">
+                      Ayodeji <span className="font-bold">Balogun</span>
+                    </p>
+                  </div>
                 </div>
               </div>
               <p className="flex flex-col gap-[10px] text-[#7C827D] text-[14px] font-bold items-center">
-                <span className="text-[#7C827D] text-[14px] font-bold">
+                <span
+                  className="text-[#7C827D] text-[14px] font-bold"
+                  style={{
+                    color: red ? "#E1261C" : "#7C827D",
+                  }}
+                >
                   Ayodeji Balogun
                 </span>
                 <span className="text-[#B4B4B0] text-[12px] uppercase">
@@ -114,10 +127,10 @@ export function Gridbuttom() {
                 className="p-[8px] rounded-[16px] bg-white card-shadow"
                 onClick={() => setRed(true)}
                 style={{
-                  border: red ? "#E1261C" : "#f5f6f7",
+                  border: red ? "2px solid #E1261C" : "#f5f6f7",
                 }}
               >
-                <div className="listcard flex items-center justify-center">
+                <div className="flex items-center justify-center listcard">
                   <div className="flex gap-[30px]">
                     <div className="scan flex items-center pr-[30px]">
                       <div className="flex items-center">
@@ -126,11 +139,19 @@ export function Gridbuttom() {
                           alt={""}
                           width={15}
                           height={15}
-                          className="onTop bg-white p-[4px] rounded-[8px]"
+                          className="onTop bg-white p-[4px] rounded-[8px] hover:hidden"
+                          // style={{
+                          //   display: red ? "none" : "block",
+                          // }}
                         />
                       </div>
                     </div>
-                    <div className="text-white text-[22px] w-[88px]">
+                    <div
+                      className="text-white text-[22px] w-[88px] hover:hidden"
+                      // style={{
+                      //   display: red ? "none" : "block",
+                      // }}
+                    >
                       Ayodeji <span className="font-bold">Balogun</span>
                     </div>
                   </div>

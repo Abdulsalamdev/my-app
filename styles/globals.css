@@ -92,6 +92,13 @@
   border-radius: 8px;
   width: 292px;
   height: 166px;
+  transition: background-image 0.1s linear;
+}
+
+.listcard:hover {
+  background-image: url("/images/whatsapp.jpeg");
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 
 .scan {
@@ -101,6 +108,7 @@
 .onTop {
   z-index: 1;
 }
+
 .delete {
   border-radius: 8px;
   border: 0.6px solid var(--brand-primary-50, #8b908b);
@@ -115,6 +123,8 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.listCard:hover {
 }
 .address {
   border-radius: 8px;

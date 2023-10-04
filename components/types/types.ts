@@ -85,3 +85,16 @@ export interface DELETECARD {
 export interface LOGINREFRESH {
   refresh : string
 }
+
+export interface CARDS {
+  full_name: string;
+  id: number;
+    first_name: string;
+  last_name: string;
+  email: string;
+  role: string;
+  tribe: string;
+  qr_code: string;
+  created_date: string;
+  profile_picture:string
+}
