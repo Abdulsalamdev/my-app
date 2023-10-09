@@ -1,5 +1,5 @@
 import { ArrowLeft2, Add, FolderCross } from "iconsax-react";
-import React from "react";
+import React, { useState } from "react";
 import AddAddress from "./modals/AddAddress";
 import { DeleteAddress } from "./modals/deleteAddress";
 import { useDisclosure } from "@mantine/hooks";
@@ -7,11 +7,14 @@ import Link from "next/link";
 import { useQueries, useQuery } from "@tanstack/react-query";
 import { builder } from "@/api/builder";
 import { ADDRESSAPI } from "./types/types";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 import { AdminPro } from "./AminPro";
 
 export default function AddressData() {
+  const [deleteId, setDeleteId] = useState<string | null>(null);
   const [opened, { open, close }] = useDisclosure(false);
+  const [openedEdit, { open: openEdit, close: closeEdit }] =
+    useDisclosure(false);
   const [openedDelete, { open: openDelete, close: closeDelete }] =
     useDisclosure(false);
   const { data: addressList, isLoading } = useQuery({
@@ -47,7 +50,7 @@ export default function AddressData() {
             <span className="text-[16px] text-white">New Address</span>
           </button>
         </div>
-        <div className="flex flex-wrap items-center  bg-white gap-[50px] p-[50px]">
+        <div className="flex flex-wrap items-center  bg-white gap-[50px] p-[30px]">
           {addressList?.map((arg: ADDRESSAPI) => (
             <div className="address p-[18px]" key={arg.id}>
               <p className="text-[16px] font-Roboto font-medium text-[#000000]">
@@ -62,7 +65,10 @@ export default function AddressData() {
                 </button>
                 <button
                   className="text-[#C81107] text-[14px] font-Roboto"
-                  onClick={openDelete}
+                  onClick={() => {
+                    console.log(arg.id as string);
+                    openDelete();
+                  }}
                 >
                   Delete Address
                 </button>
@@ -72,7 +78,7 @@ export default function AddressData() {
         </div>
       </div>
       <AddAddress close={close} opened={opened} />
-      <DeleteAddress close={closeDelete} opened={openedDelete} />
+      <DeleteAddress id={deleteId} close={closeDelete} opened={openedDelete} />
     </div>
   );
 }

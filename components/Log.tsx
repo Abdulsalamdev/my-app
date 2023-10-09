@@ -17,7 +17,7 @@ export function Log() {
     mutationKey: builder.account.api.sign_in.get(),
     onSuccess(data, variables, context) {
       toast.success("login successfully");
-      push("/list");
+      push("/address");
       cookieStorage.setItem("my-user", JSON.stringify(data.data));
       // console.log(data?.data);
       myForm.reset();

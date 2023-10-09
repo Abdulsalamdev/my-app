@@ -14,10 +14,19 @@ import { useDisclosure } from "@mantine/hooks";
 import { AddCard } from "./modals/mantine";
 import Link from "next/link";
 import { TextInput } from "@mantine/core";
+import { useQuery } from "@tanstack/react-query";
+import { builder } from "@/api/builder";
+import { CARDS } from "./types/types";
 export function Gridbuttom() {
   const [opened, { open, close }] = useDisclosure(false);
   const [red, setRed] = useState(false);
   const [list, setList] = useState(false);
+  const { data } = useQuery({
+    queryFn: () => builder.use().cardData.api.cards(),
+    queryKey: builder.cardData.api.cards.get(),
+    select: ({ data }) => data?.data,
+  });
+  console.log(data?.data);
   return (
     <div className="bg-[#F2F2F2] p-[15px] zindex">
       <div className="bg-white flex justify-between py-[20px] px-[30px] items-center rounded-t-[20px]">
@@ -79,100 +88,111 @@ export function Gridbuttom() {
         </div>
       </div>
       <div className="bg-white mt-[5px] flex flex-wrap h-[58vh] p-[20px] overflow-auto text-[24px]">
-        {list ? (
-          <div className="flex flex-wrap">
-            <div className="flex flex-col gap-[10px]">
-              <div
-                className="p-[10px] rounded-[18px]"
-                onClick={() => setRed(true)}
-                style={{
-                  border: red ? "2px solid #E1261C" : "#f5f6f7",
-                }}
-              >
-                <div className="listCard flex flex-col justify-center items-center">
-                  {/* <Image src={"/images/afex.png"} alt={""} width={50} height={50} /> */}
-                  <div className="flex flex-col gap-[15px]">
-                    <Image
-                      src={"/images/secure.png"}
-                      alt={""}
-                      width={100}
-                      height={100}
-                      className="rounded-full"
-                    />
-                    <p className="text-white text-[22px] w-[88px] text-center">
-                      Ayodeji <span className="font-bold">Balogun</span>
-                    </p>
+        {data?.map((ele: CARDS) => (
+          <div>
+            {list ? (
+              <div className="flex flex-wrap">
+                <div className="flex flex-col gap-[10px]">
+                  <div
+                    className="p-[10px] rounded-[18px]"
+                    onClick={() => setRed(true)}
+                    style={{
+                      border: red ? "2px solid #E1261C" : "#f5f6f7",
+                    }}
+                    key={ele?.id}
+                  >
+                    <div className="listCard flex flex-col justify-center items-center">
+                      {/* <Image src={"/images/afex.png"} alt={""} width={50} height={50} /> */}
+                      <div className="flex flex-col gap-[15px]">
+                        <Image
+                          src={"/images/secure.png"}
+                          alt={""}
+                          width={100}
+                          height={100}
+                          className="rounded-full"
+                        />
+                        <p className="text-white text-[22px] w-[88px] text-center">
+                          Ayodeji <span className="font-bold">Balogun</span>
+                        </p>
+                      </div>
+                    </div>
                   </div>
+                  <p className="flex flex-col gap-[10px] text-[#7C827D] text-[14px] font-bold items-center">
+                    <span
+                      className="text-[#7C827D] text-[14px] font-bold"
+                      style={{
+                        color: red ? "#E1261C" : "#7C827D",
+                      }}
+                    >
+                      {/* Ayodeji Balogun */}
+                      {ele?.full_name}
+                    </span>
+                    <span className="text-[#B4B4B0] text-[12px] uppercase">
+                      {/* 28.11.2023 */}
+                      {ele?.created_date}
+                    </span>
+                  </p>
                 </div>
               </div>
-              <p className="flex flex-col gap-[10px] text-[#7C827D] text-[14px] font-bold items-center">
-                <span
-                  className="text-[#7C827D] text-[14px] font-bold"
-                  style={{
-                    color: red ? "#E1261C" : "#7C827D",
-                  }}
-                >
-                  Ayodeji Balogun
-                </span>
-                <span className="text-[#B4B4B0] text-[12px] uppercase">
-                  28.11.2023
-                </span>
-              </p>
-            </div>
-          </div>
-        ) : (
-          <div className="flex flex-wrap">
-            <div className="flex flex-col items-center gap-[12px]">
-              <div
-                className="p-[8px] rounded-[16px] bg-white card-shadow"
-                onClick={() => setRed(true)}
-                style={{
-                  border: red ? "2px solid #E1261C" : "#f5f6f7",
-                }}
-              >
-                <div className="flex items-center justify-center listcard">
-                  <div className="flex gap-[30px]">
-                    <div className="scan flex items-center pr-[30px]">
-                      <div className="flex items-center">
-                        <Image
-                          src={"/images/scanCenter.png"}
-                          alt={""}
-                          width={15}
-                          height={15}
-                          className="onTop bg-white p-[4px] rounded-[8px] hover:hidden"
+            ) : (
+              <div className="flex flex-wrap">
+                <div className="flex flex-col items-center gap-[12px]">
+                  <div
+                    className="p-[8px] rounded-[16px] bg-white card-shadow"
+                    onClick={() => setRed(true)}
+                    style={{
+                      border: red ? "2px solid #E1261C" : "#f5f6f7",
+                    }}
+                    key={ele?.id}
+                  >
+                    <div className="flex items-center justify-center listcard">
+                      <div className="flex gap-[30px]">
+                        <div className="scan flex items-center pr-[30px]">
+                          <div className="flex items-center">
+                            <Image
+                              src={"/images/scanCenter.png"}
+                              alt={""}
+                              width={15}
+                              height={15}
+                              className="onTop bg-white p-[4px] rounded-[8px] hover:hidden"
+                              // style={{
+                              //   display: red ? "none" : "block",
+                              // }}
+                            />
+                          </div>
+                        </div>
+                        <div
+                          className="text-white text-[22px] w-[88px] hover:hidden"
                           // style={{
                           //   display: red ? "none" : "block",
                           // }}
-                        />
+                        >
+                          {ele?.first_name}{" "}
+                          <span className="font-bold">{ele?.last_name}</span>
+                        </div>
                       </div>
                     </div>
-                    <div
-                      className="text-white text-[22px] w-[88px] hover:hidden"
-                      // style={{
-                      //   display: red ? "none" : "block",
-                      // }}
-                    >
-                      Ayodeji <span className="font-bold">Balogun</span>
-                    </div>
                   </div>
+                  <p className="flex flex-col gap-[10px] text-[#7C827D] text-[14px] font-bold items-center">
+                    <span
+                      className="text-[#7C827D] text-[14px] font-bold"
+                      style={{
+                        color: red ? "#E1261C" : "#7C827D",
+                      }}
+                    >
+                      {/* Ayodeji Balogun */}
+                      {ele?.full_name}
+                    </span>
+                    <span className="text-[#B4B4B0] text-[12px] uppercase">
+                      {/* 28.11.2023 */}
+                      {ele?.created_date}
+                    </span>
+                  </p>
                 </div>
               </div>
-              <p className="flex flex-col gap-[10px] text-[#7C827D] text-[14px] font-bold items-center">
-                <span
-                  className="text-[#7C827D] text-[14px] font-bold"
-                  style={{
-                    color: red ? "#E1261C" : "#7C827D",
-                  }}
-                >
-                  Ayodeji Balogun
-                </span>
-                <span className="text-[#B4B4B0] text-[12px] uppercase">
-                  28.11.2023
-                </span>
-              </p>
-            </div>
+            )}
           </div>
-        )}
+        ))}
       </div>
       <AddCard close={close} opened={opened} />
     </div>

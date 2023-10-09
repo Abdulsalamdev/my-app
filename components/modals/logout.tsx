@@ -7,6 +7,7 @@ import { AddCardProp } from "./mantine";
 import { useRouter } from "next/router";
 import { useMutation } from "@tanstack/react-query";
 import { builder } from "@/api/builder";
+import { cookieStorage } from "@ibnlanre/portal";
 
 export function Logout({ close, opened }: AddCardProp) {
   const { push } = useRouter();
@@ -14,7 +15,7 @@ export function Logout({ close, opened }: AddCardProp) {
     mutationFn: () => builder.use().addressData.api.address(),
     mutationKey: builder.addressData.api.address.get(),
     onSuccess(data, variables, context) {
-      localStorage.clear();
+      cookieStorage.clear();
       push("/login");
     },
   });

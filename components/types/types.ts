@@ -6,6 +6,7 @@ export interface lOGINAPI {
 export interface ADDRESSAPI {
   id: string;
   address_title: string;
+company_address_slug: string
   company_address: string;
   city: string;
   country: ["Nigeria", "Kenya", "uganda"];
@@ -20,10 +21,8 @@ export interface RESETPASSWORD {
 }
 
 export interface OTPCODE {
-  first: number;
-  second: number;
-  third: number;
-  fourth: number;
+  verification_code: string;
+  
 }
 
 export interface CREATEACCOUNT {
@@ -38,7 +37,8 @@ export interface CREATEADDRESS {
   address_title: string;
   company_address: string;
   city: string;
-  country: ["Nigeria", "Kenya", "uganda"];
+  // country: ["Nigeria", "Kenya", "uganda"];
+
   latitude: string;
   longitude: string;
 }
