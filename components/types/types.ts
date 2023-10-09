@@ -47,10 +47,10 @@ export interface UPDATEADDRESS {
   address_title: string;
   company_address: string;
   city: string;
-  country: ["Nigeria", "Kenya", "uganda"];
+  // country: ["Nigeria", "Kenya", "uganda"];
   latitude: string;
   longitude: string;
-  company_address_slug: string;
+  // company_address_slug: string;
 }
 
 export interface DELETEADDRESS {

@@ -19,7 +19,7 @@ export const builder = createBuilder({
         api: {
             address: () => CARD.get(`/api/card/company_address/`),
             createAddress: (data: CREATEADDRESS) => CARD.post(`/api/card/company_address/create/`, data),
-            updateAddress: (data: UPDATEADDRESS) => CARD.put(`/api/card/company_address/{company_address_slug}/`, data),
+            updateAddress: (uuid: UPDATEADDRESS) => CARD.put(`/api/card/company_address/${uuid}/`),
             deleteAddress:(uuid: string) => CARD.delete(`/api/card/company_address/${uuid}/`),
         }
     },

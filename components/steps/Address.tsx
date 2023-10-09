@@ -29,7 +29,7 @@ export function AddressSteps() {
       longitude: "",
     },
   });
-  console.log(myForm.values);
+  // console.log(myForm.values);
   return (
     <form
       className="flex flex-col gap-[25px]"

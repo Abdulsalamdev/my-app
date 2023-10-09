@@ -60,7 +60,13 @@ export default function AddressData() {
                 {arg.company_address}
               </p>
               <div className="flex gap-[30px] items-center pt-[10px]">
-                <button className="text-[#1D925D] text-[14px] font-Roboto">
+                <button
+                  className="text-[#1D925D] text-[14px] font-Roboto"
+                  onClick={() => {
+                    console.log(arg.id);
+                    openEdit();
+                  }}
+                >
                   Edit
                 </button>
                 <button
