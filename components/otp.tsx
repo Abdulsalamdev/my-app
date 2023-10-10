@@ -7,7 +7,7 @@ import { builder } from "@/api/builder";
 import { useForm } from "@mantine/form";
 import { toast } from "react-toastify";
 import { cookieStorage } from "@ibnlanre/portal";
-export default function Otp() {
+export function Otp() {
   const { push } = useRouter();
   const { mutate } = useMutation({
     mutationFn: () => builder.use().account.api.otpCode(myForm.values),

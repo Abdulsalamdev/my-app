@@ -1,7 +1,7 @@
 import { Add, ArrowLeft2, FolderCross } from "iconsax-react";
 import React from "react";
 import { useDisclosure } from "@mantine/hooks";
-import AddAddress from "./modals/AddAddress";
+import { AddAddress } from "./modals/AddAddress";
 import Link from "next/link";
 
 export function AdminPro() {

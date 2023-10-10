@@ -2,7 +2,7 @@ import { Select, TextInput } from "@mantine/core";
 import Link from "next/link";
 import React from "react";
 
-export default function Organization() {
+export function Organization() {
   return (
     <div className="flex flex-col gap-[15px]">
       <div className="flex flex-col gap-[10px]">

@@ -1,6 +1,6 @@
 import { ArrowLeft2, Add, FolderCross } from "iconsax-react";
 import React, { useState } from "react";
-import AddAddress from "./modals/AddAddress";
+import { AddAddress } from "./modals/AddAddress";
 import { DeleteAddress } from "./modals/deleteAddress";
 import { useDisclosure } from "@mantine/hooks";
 import Link from "next/link";

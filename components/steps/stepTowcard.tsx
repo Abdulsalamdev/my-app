@@ -1,5 +1,5 @@
 import React from "react";
-import Organization from "../onceUse/organization";
+import { Organization } from "../onceUse/organization";
 
 export function StepTowCard() {
   return (

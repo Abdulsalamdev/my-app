@@ -7,7 +7,7 @@ interface AddCardProp {
   close: () => void;
   opened: boolean;
 }
-export default function AddAddress({ close, opened }: AddCardProp) {
+export function AddAddress({ close, opened }: AddCardProp) {
   return (
     <div>
       <Modal

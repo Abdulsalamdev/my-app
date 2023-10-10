@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-export default function Landing() {
+export function Landing() {
   return (
     <div className="">
       <div className="h-[clamp(20px,3vw,40px)] bg-[#E1261C]"></div>
