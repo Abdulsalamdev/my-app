@@ -1,5 +1,5 @@
 import { ArrowLeft2, Add, FolderCross } from "iconsax-react";
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { AddAddress } from "./modals/AddAddress";
 import { DeleteAddress } from "./modals/deleteAddress";
 import { useDisclosure } from "@mantine/hooks";
@@ -26,6 +26,7 @@ export default function AddressData() {
     //   console.log("Error founddddd");
     // },
   });
+
   isLoading && <AdminPro />;
   return (
     <div className="bg-[#F5F5F6]">
@@ -64,7 +65,7 @@ export default function AddressData() {
                   className="text-[#1D925D] text-[14px] font-Roboto"
                   onClick={() => {
                     console.log(arg.id);
-                    openEdit();
+                    open();
                   }}
                 >
                   Edit
