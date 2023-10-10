@@ -30,7 +30,7 @@ export default function AddressData() {
   return (
     <div className="bg-[#F5F5F6]">
       <div className="w-[96%] m-auto  py-[30px]">
-        <Link href={"/list"}>
+        <Link href={"#"}>
           <div className="flex gap-[20px] items-center pb-[20px]">
             <ArrowLeft2 size="20" color="#262626" />
             <span className="text-[16px] font-medium text-[#54565B]">
@@ -50,13 +50,13 @@ export default function AddressData() {
             <span className="text-[16px] text-white">New Address</span>
           </button>
         </div>
-        <div className="flex flex-wrap items-center  bg-white gap-[50px] p-[30px]">
+        <div className="flex flex-wrap items-center  bg-white gap-[50px] p-[clamp(15px,1.7vw,30px)]">
           {addressList?.map((arg: ADDRESSAPI) => (
-            <div className="address p-[18px]" key={arg.id}>
+            <div className="address p-[clamp(10px,1.3vw,18px)]" key={arg.id}>
               <p className="text-[16px] font-Roboto font-medium text-[#000000]">
                 {arg.address_title}
               </p>
-              <p className="text-[12px] font-Roboto font-normal w-[335px] text-[#727272] pt-[10px]">
+              <p className="text-[12px] font-Roboto font-normal w-[clamp(290px,23vw,335px)] text-[#727272] pt-[10px]">
                 {arg.company_address}
               </p>
               <div className="flex gap-[30px] items-center pt-[10px]">
