@@ -83,7 +83,7 @@ export function Listbuttom() {
           </button>
         </div>
       </div>
-      <AddCard close={close} opened={opened} />
+      <AddCard close={close} opened={opened} id={null} />
     </div>
   );
 }

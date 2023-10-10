@@ -27,7 +27,7 @@ export function ListHead() {
         </div>
         {/* <button onClick={open}>open</button> */}
       </div>
-      <Logout close={close} opened={opened} />
+      <Logout close={close} opened={opened} id={null} />
     </div>
   );
 }

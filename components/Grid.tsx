@@ -89,10 +89,10 @@ export function Gridbuttom() {
       </div>
       <div className="bg-white mt-[5px] flex flex-wrap h-[58vh] p-[20px] overflow-auto text-[24px]">
         {data?.map((ele: CARDS) => (
-          <div>
+          <div key={ele?.id}>
             {list ? (
-              <div className="flex flex-wrap">
-                <div className="flex flex-col gap-[10px]">
+              <div className="flex flex-wrap" key={ele?.id}>
+                <div className="flex flex-col gap-[10px]" key={ele?.id}>
                   <div
                     className="p-[10px] rounded-[18px]"
                     onClick={() => setRed(true)}
@@ -135,17 +135,22 @@ export function Gridbuttom() {
                 </div>
               </div>
             ) : (
-              <div className="flex flex-wrap">
-                <div className="flex flex-col items-center gap-[12px]">
+              <div className="flex flex-wrap" key={ele?.id}>
+                <div
+                  className="flex flex-col items-center gap-[12px]"
+                  key={ele?.id}
+                >
                   <div
                     className="p-[8px] rounded-[16px] bg-white card-shadow"
                     onClick={() => setRed(true)}
                     style={{
                       border: red ? "2px solid #E1261C" : "#f5f6f7",
                     }}
-                    key={ele?.id}
                   >
-                    <div className="flex items-center justify-center listcard">
+                    <div
+                      className="flex items-center justify-center listcard"
+                      key={ele?.id}
+                    >
                       <div className="flex gap-[30px]">
                         <div className="scan flex items-center pr-[30px]">
                           <div className="flex items-center">
@@ -194,7 +199,7 @@ export function Gridbuttom() {
           </div>
         ))}
       </div>
-      <AddCard close={close} opened={opened} />
+      <AddCard close={close} opened={opened} id={null} />
     </div>
   );
 }
